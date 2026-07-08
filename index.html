@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nice Donut Ltd — Importers & Distributors of Foods & Beverages | Nairobi</title>
+<meta name="description" content="Nice Donut Ltd imports and distributes assorted foods and beverages from Asia and Africa. Based at Amco Plaza, Eastleigh, Nairobi. Call +254 722 339 358.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f2352;
+  --navy-deep:#0a1838;
+  --amber:#f29c1f;
+  --amber-deep:#d97e06;
+  --cream:#fdf7ec;
+  --cream-2:#f7efdd;
+  --ink:#1c2440;
+  --muted:#5a6685;
+  --white:#ffffff;
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Sora',sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+
+/* ============ NAV ============ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(253,247,236,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(15,35,82,.08);
+}
+.nav-inner{
+  max-width:1140px;margin:0 auto;padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{
+  width:44px;height:44px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #ffce6b 0%, var(--amber) 45%, var(--amber-deep) 100%);
+  display:grid;place-items:center;position:relative;flex-shrink:0;
+  box-shadow:0 3px 10px rgba(217,126,6,.35);
+}
+.brand-mark::after{
+  content:'';width:14px;height:14px;border-radius:50%;
+  background:var(--cream);
+}
+.brand-text{line-height:1.15}
+.brand-text .name{
+  font-family:'Fraunces',serif;font-weight:900;font-size:1.05rem;color:var(--navy);letter-spacing:.02em;
+}
+.brand-text .tag{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-deep);font-weight:600}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.85rem;font-weight:500;color:var(--ink);transition:color .2s}
+.nav-links a:hover{color:var(--amber-deep)}
+.nav-cta{
+  background:var(--navy);color:#fff !important;padding:10px 20px;border-radius:999px;
+  font-weight:600;font-size:.82rem;transition:background .2s,transform .2s;
+}
+.nav-cta:hover{background:var(--navy-deep);transform:translateY(-1px)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;transition:.3s}
+
+/* ============ HERO ============ */
+header{
+  background:linear-gradient(165deg, var(--navy) 0%, var(--navy-deep) 70%);
+  color:#fff;position:relative;overflow:hidden;
+  padding:150px 0 0;
+}
+/* route arcs backdrop */
+.routes{position:absolute;inset:0;opacity:.5;pointer-events:none}
+.hero-grid{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;
+  padding-bottom:90px;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  color:var(--amber);margin-bottom:22px;
+}
+.eyebrow::before{content:'';width:28px;height:2px;background:var(--amber);border-radius:2px}
+h1{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(2.4rem,5.2vw,3.9rem);line-height:1.06;letter-spacing:-.01em;
+  margin-bottom:22px;
+}
+h1 em{font-style:italic;color:var(--amber)}
+.hero-sub{
+  font-size:1.02rem;color:rgba(255,255,255,.78);max-width:34rem;
+  font-weight:300;margin-bottom:34px;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 28px;border-radius:999px;font-weight:600;font-size:.9rem;
+  transition:transform .2s, box-shadow .2s, background .2s;
+}
+.btn-amber{
+  background:var(--amber);color:var(--navy-deep);
+  box-shadow:0 8px 24px rgba(242,156,31,.35);
+}
+.btn-amber:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(242,156,31,.45)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+/* hero visual card */
+.hero-visual{position:relative}
+.route-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:24px;padding:34px 30px;backdrop-filter:blur(6px);
+}
+.route-card h3{
+  font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;margin-bottom:20px;color:#fff;
+}
+.route-line{
+  display:flex;align-items:center;gap:12px;padding:13px 0;
+  border-bottom:1px dashed rgba(255,255,255,.15);
+}
+.route-line:last-child{border-bottom:none}
+.route-dot{
+  width:10px;height:10px;border-radius:50%;background:var(--amber);flex-shrink:0;
+  box-shadow:0 0 0 4px rgba(242,156,31,.2);
+}
+.route-line .from{font-size:.85rem;font-weight:600;color:#fff;min-width:105px}
+.route-line .arrow{color:var(--amber);font-size:.8rem}
+.route-line .what{font-size:.78rem;color:rgba(255,255,255,.65)}
+
+/* stats band */
+.stats-band{
+  position:relative;z-index:2;
+  background:var(--amber);
+  padding:26px 0;
+}
+.stats-inner{
+  max-width:1140px;margin:0 auto;padding:0 24px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;
+}
+.stat .num{
+  font-family:'Fraunces',serif;font-weight:900;font-size:1.9rem;color:var(--navy-deep);line-height:1;
+}
+.stat .lbl{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:rgba(10,24,56,.7);margin-top:6px}
+
+/* ============ SECTIONS ============ */
+section{padding:88px 0}
+.sec-head{max-width:620px;margin-bottom:52px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-eyebrow{
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;
+  color:var(--amber-deep);margin-bottom:14px;display:block;
+}
+h2{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.12;color:var(--navy);
+  margin-bottom:16px;letter-spacing:-.01em;
+}
+.sec-head p{color:var(--muted);font-size:.98rem}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-copy p{color:var(--muted);margin-bottom:18px;font-size:.97rem}
+.about-copy strong{color:var(--navy)}
+.about-points{display:grid;gap:14px;margin-top:26px}
+.point{display:flex;gap:14px;align-items:flex-start}
+.point-ic{
+  width:38px;height:38px;border-radius:12px;background:var(--navy);color:var(--amber);
+  display:grid;place-items:center;font-size:1rem;flex-shrink:0;font-weight:700;
+}
+.point b{color:var(--navy);font-size:.92rem;display:block}
+.point span{font-size:.84rem;color:var(--muted)}
+.about-visual{
+  background:linear-gradient(160deg,var(--navy),var(--navy-deep));
+  border-radius:28px;padding:44px 38px;color:#fff;position:relative;overflow:hidden;
+}
+.about-visual::before{
+  content:'';position:absolute;width:260px;height:260px;border-radius:50%;
+  border:34px solid rgba(242,156,31,.16);right:-90px;top:-90px;
+}
+.about-visual h3{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;margin-bottom:12px;position:relative}
+.about-visual p{color:rgba(255,255,255,.75);font-size:.9rem;position:relative;margin-bottom:22px}
+.mini-list{position:relative;display:grid;gap:10px}
+.mini-list div{display:flex;align-items:center;gap:10px;font-size:.86rem}
+.mini-list div::before{content:'✓';color:var(--amber);font-weight:700}
+
+/* categories */
+.cats{background:var(--white)}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cat{
+  background:var(--cream);border:1px solid rgba(15,35,82,.07);
+  border-radius:var(--radius);padding:28px 22px;
+  transition:transform .25s, box-shadow .25s, border-color .25s;
+}
+.cat:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(15,35,82,.1);border-color:var(--amber)}
+.cat .emoji{font-size:1.9rem;margin-bottom:14px}
+.cat b{font-family:'Fraunces',serif;font-size:1rem;color:var(--navy);display:block;margin-bottom:6px}
+.cat span{font-size:.8rem;color:var(--muted)}
+
+/* sourcing */
+.sourcing{background:linear-gradient(165deg,var(--navy) 0%,var(--navy-deep) 80%);color:#fff}
+.sourcing h2{color:#fff}
+.sourcing .sec-head p{color:rgba(255,255,255,.7)}
+.region-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.region{
+  border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:32px 30px;
+  background:rgba(255,255,255,.05);
+}
+.region .flagline{font-size:1.5rem;margin-bottom:14px;letter-spacing:.1em}
+.region h3{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;margin-bottom:10px;color:var(--amber)}
+.region p{font-size:.88rem;color:rgba(255,255,255,.72)}
+
+/* why us */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.why{
+  background:var(--white);border-radius:var(--radius);padding:32px 26px;
+  border:1px solid rgba(15,35,82,.07);
+}
+.why .n{
+  font-family:'Fraunces',serif;font-weight:900;font-size:1rem;color:var(--amber-deep);
+  width:42px;height:42px;border-radius:50%;background:rgba(242,156,31,.14);
+  display:grid;place-items:center;margin-bottom:18px;
+}
+.why b{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--navy);display:block;margin-bottom:8px}
+.why p{font-size:.86rem;color:var(--muted)}
+
+/* contact */
+.contact{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-card{
+  background:var(--cream);border-radius:24px;padding:38px 34px;border:1px solid rgba(15,35,82,.07);
+}
+.c-row{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px dashed rgba(15,35,82,.12)}
+.c-row:last-child{border-bottom:none}
+.c-ic{
+  width:44px;height:44px;border-radius:14px;background:var(--navy);color:var(--amber);
+  display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;
+}
+.c-row b{display:block;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.c-row a,.c-row span{font-size:.98rem;font-weight:600;color:var(--navy)}
+.c-row a:hover{color:var(--amber-deep)}
+.wa-btn{
+  display:inline-flex;align-items:center;gap:10px;margin-top:26px;
+  background:#25D366;color:#fff;padding:15px 30px;border-radius:999px;
+  font-weight:600;font-size:.92rem;box-shadow:0 8px 22px rgba(37,211,102,.3);
+  transition:transform .2s;
+}
+.wa-btn:hover{transform:translateY(-2px)}
+.hours{
+  background:linear-gradient(160deg,var(--navy),var(--navy-deep));
+  color:#fff;border-radius:24px;padding:38px 34px;
+}
+.hours h3{font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:20px}
+.h-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.14);font-size:.9rem}
+.h-row:last-of-type{border-bottom:none}
+.h-row span:first-child{color:rgba(255,255,255,.72)}
+.h-row span:last-child{font-weight:600;color:var(--amber)}
+.hours .note{margin-top:20px;font-size:.82rem;color:rgba(255,255,255,.6)}
+
+/* footer */
+footer{background:var(--navy-deep);color:rgba(255,255,255,.65);padding:44px 0 30px}
+.f-inner{
+  max-width:1140px;margin:0 auto;padding:0 24px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+}
+.f-brand{display:flex;align-items:center;gap:12px}
+.f-brand .name{font-family:'Fraunces',serif;font-weight:900;color:#fff}
+.f-brand .tag{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+footer .copy{font-size:.78rem}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:40px;padding-bottom:70px}
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:26px 12px}
+  .about-grid,.contact-grid,.region-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    background:var(--cream);flex-direction:column;padding:20px 24px;gap:18px;
+    border-bottom:1px solid rgba(15,35,82,.1);align-items:flex-start;
+  }
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+  header{padding-top:120px}
+  section{padding:64px 0}
+}
+@media (max-width:520px){
+  .cat-grid{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-text">
+        <div class="name">NICE DONUT LTD</div>
+        <div class="tag">A Bite of Happiness</div>
+      </div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#sourcing">Sourcing</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact" class="nav-cta">Get a Quote</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header id="top">
+  <svg class="routes" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M1150,120 Q800,60 600,330" stroke="rgba(242,156,31,.35)" stroke-width="1.6" fill="none" stroke-dasharray="3 7"/>
+    <path d="M1100,280 Q850,220 600,330" stroke="rgba(242,156,31,.3)" stroke-width="1.6" fill="none" stroke-dasharray="3 7"/>
+    <path d="M80,420 Q330,460 600,330" stroke="rgba(255,255,255,.22)" stroke-width="1.6" fill="none" stroke-dasharray="3 7"/>
+    <path d="M180,180 Q380,180 600,330" stroke="rgba(255,255,255,.18)" stroke-width="1.6" fill="none" stroke-dasharray="3 7"/>
+    <circle cx="600" cy="330" r="6" fill="#f29c1f"/>
+    <circle cx="600" cy="330" r="14" fill="none" stroke="rgba(242,156,31,.5)" stroke-width="1.5"/>
+    <circle cx="1150" cy="120" r="4" fill="rgba(255,255,255,.5)"/>
+    <circle cx="1100" cy="280" r="4" fill="rgba(255,255,255,.5)"/>
+    <circle cx="80" cy="420" r="4" fill="rgba(255,255,255,.5)"/>
+    <circle cx="180" cy="180" r="4" fill="rgba(255,255,255,.5)"/>
+  </svg>
+
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Importers &amp; Distributors — Nairobi, Kenya</span>
+      <h1>Bringing the flavours of <em>Asia &amp; Africa</em> to Kenya's shelves.</h1>
+      <p class="hero-sub">Nice Donut Ltd imports and distributes assorted foods and beverages sourced across Asian and African markets — supplying wholesalers, retailers and institutions with quality products, consistent stock and dependable delivery.</p>
+      <div class="hero-actions">
+        <a class="btn btn-amber" href="tel:+254722339358">📞 Call +254 722 339 358</a>
+        <a class="btn btn-ghost" href="#products">View Our Range</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="route-card">
+        <h3>Trade routes we work every week</h3>
+        <div class="route-line"><span class="route-dot"></span><span class="from">East Asia</span><span class="arrow">→</span><span class="what">Beverages, confectionery, noodles</span></div>
+        <div class="route-line"><span class="route-dot"></span><span class="from">South Asia</span><span class="arrow">→</span><span class="what">Rice, spices, pulses, tea</span></div>
+        <div class="route-line"><span class="route-dot"></span><span class="from">Middle East</span><span class="arrow">→</span><span class="what">Dates, juices, cooking oils</span></div>
+        <div class="route-line"><span class="route-dot"></span><span class="from">Africa</span><span class="arrow">→</span><span class="what">Grains, coffee, regional staples</span></div>
+        <div class="route-line"><span class="route-dot"></span><span class="from" style="color:#f29c1f">Nairobi Hub</span><span class="arrow">→</span><span class="what">Distribution across Kenya</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-band">
+    <div class="stats-inner">
+      <div class="stat"><div class="num">2</div><div class="lbl">Continents Sourced</div></div>
+      <div class="stat"><div class="num">100+</div><div class="lbl">Product Lines</div></div>
+      <div class="stat"><div class="num">7 Days</div><div class="lbl">Weekly Distribution</div></div>
+      <div class="stat"><div class="num">Eastleigh</div><div class="lbl">Nairobi Hub</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-copy reveal">
+      <span class="sec-eyebrow">Who We Are</span>
+      <h2>A trading house built on taste, trust and timely delivery.</h2>
+      <p><strong>Nice Donut Ltd</strong> is a Nairobi-based import and distribution company dealing in assorted foods and beverages from across Asia and Africa. From our base at Amco Plaza, Eastleigh — the heart of Kenya's wholesale trade — we move quality products from origin markets into shops, supermarkets and distributors countrywide.</p>
+      <p>We handle the full chain ourselves: sourcing, importation, clearance, warehousing and last-mile distribution — so our customers get the right stock, at the right price, on time.</p>
+      <div class="about-points">
+        <div class="point"><div class="point-ic">1</div><div><b>Direct sourcing</b><span>We buy at origin from vetted manufacturers and exporters — no unnecessary middlemen.</span></div></div>
+        <div class="point"><div class="point-ic">2</div><div><b>Reliable supply</b><span>Consistent stock levels and repeat-order dependability for our trade customers.</span></div></div>
+        <div class="point"><div class="point-ic">3</div><div><b>Competitive pricing</b><span>Volume importation keeps our wholesale prices sharp across every category.</span></div></div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <h3>From port to shop shelf</h3>
+      <p>Every consignment passes through our quality and documentation checks before it reaches the market.</p>
+      <div class="mini-list">
+        <div>Vetted origin suppliers</div>
+        <div>Compliant importation &amp; clearance</div>
+        <div>Clean, organised warehousing</div>
+        <div>Prompt countrywide dispatch</div>
+        <div>Trade credit terms for repeat partners</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cats" id="products">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="sec-eyebrow">Our Range</span>
+      <h2>Assorted foods &amp; beverages, one supplier.</h2>
+      <p>A broad, ever-growing catalogue built around what Kenyan retailers actually move.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat reveal"><div class="emoji">🥤</div><b>Beverages</b><span>Juices, soft drinks, energy drinks &amp; flavoured waters</span></div>
+      <div class="cat reveal"><div class="emoji">🍬</div><b>Confectionery</b><span>Sweets, chocolates, biscuits &amp; baked snacks</span></div>
+      <div class="cat reveal"><div class="emoji">🍚</div><b>Rice &amp; Grains</b><span>Basmati, long-grain rice, pulses &amp; cereals</span></div>
+      <div class="cat reveal"><div class="emoji">🫒</div><b>Cooking Oils</b><span>Vegetable, sunflower &amp; specialty cooking oils</span></div>
+      <div class="cat reveal"><div class="emoji">🌶️</div><b>Spices &amp; Seasonings</b><span>Whole &amp; ground spices, sauces &amp; condiments</span></div>
+      <div class="cat reveal"><div class="emoji">🍜</div><b>Instant Foods</b><span>Noodles, pasta &amp; ready-to-cook lines</span></div>
+      <div class="cat reveal"><div class="emoji">🥫</div><b>Canned &amp; Packaged</b><span>Canned foods, dates, tomato paste &amp; preserves</span></div>
+      <div class="cat reveal"><div class="emoji">☕</div><b>Tea &amp; Coffee</b><span>Teas, coffees &amp; hot beverage products</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sourcing" id="sourcing">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow" style="color:var(--amber)">Where We Source</span>
+      <h2>Two continents. One dependable pipeline.</h2>
+      <p>Our buying relationships span key production markets in Asia and Africa, giving our customers variety and price advantage.</p>
+    </div>
+    <div class="region-grid">
+      <div class="region reveal">
+        <div class="flagline">🌏</div>
+        <h3>Asian Markets</h3>
+        <p>We import beverages, confectionery, rice, noodles, spices and packaged foods from established manufacturers across East, South and Southeast Asia and the Middle East — markets known for quality, scale and competitive factory pricing.</p>
+      </div>
+      <div class="region reveal">
+        <div class="flagline">🌍</div>
+        <h3>African Markets</h3>
+        <p>We source regional staples, grains, coffee and fast-moving food products from trusted suppliers across the continent — supporting intra-African trade while keeping landed costs low for our Kenyan customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="sec-eyebrow">Why Nice Donut Ltd</span>
+      <h2>Why the trade buys from us.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal"><div class="n">01</div><b>Quality you can restock</b><p>Every product line is selected for taste, shelf life and packaging that sells — and we stand behind what we supply.</p></div>
+      <div class="why reveal"><div class="n">02</div><b>Wholesale-friendly terms</b><p>Flexible order quantities, sharp trade pricing and terms that grow with your business.</p></div>
+      <div class="why reveal"><div class="n">03</div><b>Speed &amp; reliability</b><p>Based in Eastleigh's trading hub, we dispatch fast and communicate clearly — one call and your order is moving.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="sec-eyebrow">Get In Touch</span>
+      <h2>Talk to us today.</h2>
+      <p>Wholesale enquiries, price lists and partnership discussions — we respond fast.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="c-row">
+          <div class="c-ic">📞</div>
+          <div><b>Phone</b><a href="tel:+254722339358">+254 722 339 358</a></div>
+        </div>
+        <div class="c-row">
+          <div class="c-ic">✉️</div>
+          <div><b>Email</b><a href="mailto:nicedonutltd@gmail.com">nicedonutltd@gmail.com</a></div>
+        </div>
+        <div class="c-row">
+          <div class="c-ic">📍</div>
+          <div><b>Location</b><span>Amco Plaza, 1st Avenue, Eastleigh, Nairobi</span></div>
+        </div>
+        <div class="c-row">
+          <div class="c-ic">📮</div>
+          <div><b>Postal</b><span>P.O. Box 00610-233, Nairobi</span></div>
+        </div>
+        <a class="wa-btn" href="https://wa.me/254722339358?text=Hello%20Nice%20Donut%20Ltd%2C%20I%27d%20like%20a%20price%20list." target="_blank" rel="noopener">
+          💬 Chat on WhatsApp
+        </a>
+      </div>
+      <div class="hours reveal">
+        <h3>Business Hours</h3>
+        <div class="h-row"><span>Monday – Friday</span><span>8:00 AM – 6:00 PM</span></div>
+        <div class="h-row"><span>Saturday</span><span>8:00 AM – 5:00 PM</span></div>
+        <div class="h-row"><span>Sunday</span><span>By appointment</span></div>
+        <p class="note">Walk-in trade customers welcome at Amco Plaza. For bulk orders, call ahead and we'll have your consignment ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-inner">
+    <div class="f-brand">
+      <div class="brand-mark" style="width:38px;height:38px"></div>
+      <div>
+        <div class="name">NICE DONUT LTD</div>
+        <div class="tag">A Bite of Happiness</div>
+      </div>
+    </div>
+    <div class="copy">© 2026 Nice Donut Ltd · Amco Plaza, Eastleigh, Nairobi · +254 722 339 358</div>
+  </div>
+</footer>
+
+<script>
+// mobile menu
+const btn=document.getElementById('menuBtn');
+const links=document.getElementById('navLinks');
+btn.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+// scroll reveal
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
